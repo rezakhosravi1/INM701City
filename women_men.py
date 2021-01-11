@@ -463,7 +463,7 @@ men_generator.summary()
 @tf.function
 def log_normal_pdf(z, z_mean, z_log_var):
     return tf.reduce_sum(
-        -0.5 * ((z - z_mean)) ** 2. * tf.exp(-z_log_var) + z_log_var + tf.math.log(2.* np.pi),
+        -0.5 * ((z - z_mean) ** 2. * tf.exp(-z_log_var) + z_log_var + tf.math.log(2.* np.pi)),
         axis=-1)
 
 # DEFINE THE METRIC(S) WE WISH TO TRACK AND WRITE THE SUMMARY
